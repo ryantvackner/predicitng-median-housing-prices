@@ -16,3 +16,11 @@ from statsmodels.sandbox.regression.predstd import wls_prediction_std
 import matplotlib.pyplot as plt
 import pandas as pd
 
+# import data
+root = 'https://raw.githubusercontent.com/ryantvackner/predictng-median-housing-prices/main/'
+
+median_housing_price = pd.read_csv(root + 'MedianSalesPriceofHouses.csv')
+consumer_price_index = pd.read_csv(root + 'ConsumerPriceIndex.csv')
+gross_domestic_product = pd.read_csv(root + 'GrossDomesticProduct.csv')
+median_weekly_nominal_earnings = pd.read_csv(root + 'MedianWeeklyNominalEarnings.csv')
+unemployment_rate = pd.read_csv(root + 'UnemploymentRate.csv')
