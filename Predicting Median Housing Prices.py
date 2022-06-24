@@ -24,3 +24,9 @@ consumer_price_index = pd.read_csv(root + 'ConsumerPriceIndex.csv')
 gross_domestic_product = pd.read_csv(root + 'GrossDomesticProduct.csv')
 median_weekly_nominal_earnings = pd.read_csv(root + 'MedianWeeklyNominalEarnings.csv')
 unemployment_rate = pd.read_csv(root + 'UnemploymentRate.csv')
+
+# merge data frames into one data frame by date
+df = (median_weekly_nominal_earnings.merge(median_housing_price, on='DATE')
+      .merge(consumer_price_index, on='DATE')
+      .merge(gross_domestic_product, on='DATE')
+      .merge(unemployment_rate, on='DATE'))
