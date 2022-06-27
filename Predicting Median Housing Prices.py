@@ -46,3 +46,6 @@ ols_housing_model = ols("""median_housing_price ~ consumer_price_index
 
 # change the column types
 df = df.astype({"consumer_price_index": float, "unemployment_rate": float})
+
+# print the ols housing model summary
+print(ols_housing_model.summary())
