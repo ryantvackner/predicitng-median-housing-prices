@@ -30,3 +30,10 @@ df = (median_weekly_nominal_earnings.merge(median_housing_price, on='DATE')
       .merge(consumer_price_index, on='DATE')
       .merge(gross_domestic_product, on='DATE')
       .merge(unemployment_rate, on='DATE'))
+
+# rename the columns of the data frame
+df.rename(columns={'LES1252881500Q':'median_weekly_nominal_earnings', 
+                   'MSPUS':'median_housing_price', 
+                   'CORESTICKM159SFRBATL':'consumer_price_index',
+                   'GDP':'gross_domestic_product',
+                   'UNRATE':'unemployment_rate'}, inplace = True)
