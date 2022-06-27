@@ -37,3 +37,9 @@ df.rename(columns={'LES1252881500Q':'median_weekly_nominal_earnings',
                    'CORESTICKM159SFRBATL':'consumer_price_index',
                    'GDP':'gross_domestic_product',
                    'UNRATE':'unemployment_rate'}, inplace = True)
+
+# build the ols housing model
+ols_housing_model = ols("""median_housing_price ~ consumer_price_index
+                        + gross_domestic_product
+                        + median_weekly_nominal_earnings
+                        + unemployment_rate""", data=df).fit()
