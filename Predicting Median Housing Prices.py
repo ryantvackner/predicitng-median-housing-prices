@@ -43,3 +43,6 @@ ols_housing_model = ols("""median_housing_price ~ consumer_price_index
                         + gross_domestic_product
                         + median_weekly_nominal_earnings
                         + unemployment_rate""", data=df).fit()
+
+# change the column types
+df = df.astype({"consumer_price_index": float, "unemployment_rate": float})
